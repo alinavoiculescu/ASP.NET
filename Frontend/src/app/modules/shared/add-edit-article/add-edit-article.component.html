@@ -1,0 +1,31 @@
+<div class="container">
+  <h1 class="title">
+    {{ mytitle }}
+  </h1>
+
+  <form [formGroup]="articleForm" class="form">
+    <mat-form-field appearance="outline">
+      <mat-label>ID</mat-label>
+      <input matInput placeHolder="ID" formControlName="id"/>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Title</mat-label>
+      <input matInput placeHolder="Title" formControlName="title"/>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Content</mat-label>
+      <input matInput placeHolder="Content" formControlName="articleText"/>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Page number</mat-label>
+      <input matInput placeHolder="Page number" formControlName="pageID"/>
+    </mat-form-field>
+  </form>
+
+  <button mat-raised-button (click)="!data ? addArticle() : editArticle()" appHoverBtn>
+    Save
+  </button>
+</div>

@@ -1,0 +1,50 @@
+<button mat-raised-button (click)="logout()" class="button-8">
+  Logout
+</button>
+
+<div class="container">
+  <h1 class="title">
+    Article Photos
+  </h1>
+  <table mat-table [dataSource]="articlephotos" class="mat-elevation-z8 demo-table table">
+    <ng-container matColumnDef="articleID">
+      <th mat-header-cell *matHeaderCellDef>Article ID</th>
+      <td mat-cell *matCellDef="let element">{{element.articleID}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="photoID">
+      <th mat-header-cell *matHeaderCellDef>Photo ID</th>
+      <td mat-cell *matCellDef="let element">{{element.photoID}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="description">
+      <th mat-header-cell *matHeaderCellDef>Description</th>
+      <td mat-cell *matCellDef="let element">{{element.description}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="edit">
+      <th mat-header-cell *matHeaderCellDef>Edit</th>
+      <td mat-cell *matCellDef="let element" (click)="editArticlephoto(element)">
+        <mat-icon>
+          edit
+        </mat-icon>
+      </td>
+    </ng-container>
+
+    <!--<ng-container matColumnDef="delete">
+      <th mat-header-cell *matHeaderCellDef>Delete</th>
+      <td mat-cell *matCellDef="let element" (click)="deleteArticlephoto(element)">
+        <mat-icon>
+          delete
+        </mat-icon>
+      </td>
+    </ng-container>-->
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+  <button mat-raised-button (click)="addNewArticlephoto()" class="add-button">
+    Add Article Photo
+  </button>
+</div>

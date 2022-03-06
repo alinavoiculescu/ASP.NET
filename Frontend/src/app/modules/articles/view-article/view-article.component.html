@@ -1,0 +1,23 @@
+<div class="container">
+  <h1 class="title">
+    {{ 'Article Details' | marks }}
+  </h1>
+  <mat-card class="card">
+    <p class="details">
+      <span class="columns">{{ 'Title' | marks }}</span> {{ article.title }}
+    </p>
+    <p class="details">
+      <span class="columns">{{ 'Content' | marks }}</span> {{ article.articleText }}
+    </p>
+    <p class="details">
+      <span class="columns">{{ 'Page Number' | marks }}</span> {{ article.pageID }}
+    </p>
+    <p class="details">
+      <span class="columns">{{ 'ID' | marks }}</span> {{ article.id }}
+    </p>
+  </mat-card>
+
+  <form action="http://localhost:4200/articles">
+    <input class="button-8 add-button" type="submit" value="Go back to all articles" />
+  </form>
+</div>

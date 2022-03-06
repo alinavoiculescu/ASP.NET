@@ -1,0 +1,26 @@
+<div class="container">
+  <h1 class="title">
+    {{ mytitle }}
+  </h1>
+
+  <form [formGroup]="pageForm" class="form">
+    <mat-form-field appearance="outline">
+      <mat-label>ID</mat-label>
+      <input matInput placeHolder="ID" formControlName="id"/>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Publication Date</mat-label>
+      <input matInput placeHolder="Publication Date" formControlName="publicationDate"/>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Short Description</mat-label>
+      <input matInput placeHolder="Short Description" formControlName="shortDescription"/>
+    </mat-form-field>
+  </form>
+
+  <button mat-raised-button (click)="!data ? addPage() : editPage()">
+    Save
+  </button>
+</div>

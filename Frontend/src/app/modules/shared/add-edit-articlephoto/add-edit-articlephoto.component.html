@@ -1,0 +1,26 @@
+<div class="container">
+  <h1 class="title">
+    {{ mytitle }}
+  </h1>
+
+  <form [formGroup]="articlephotoForm" class="form">
+    <mat-form-field appearance="outline">
+      <mat-label>ArticleID</mat-label>
+      <input matInput placeHolder="ArticleID" formControlName="articleID"/>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>PhotoID</mat-label>
+      <input matInput placeHolder="PhotoID" formControlName="photoID"/>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Description</mat-label>
+      <input matInput placeHolder="Description" formControlName="description"/>
+    </mat-form-field>
+  </form>
+
+  <button mat-raised-button (click)="!data ? addArticlephoto() : editArticlephoto()">
+    Save
+  </button>
+</div>

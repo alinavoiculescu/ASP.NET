@@ -1,0 +1,45 @@
+<button mat-raised-button (click)="logout()" class="button-8">
+  Logout
+</button>
+
+<div class="container">
+  <h1 class="title">
+    Photos
+  </h1>
+  <table mat-table [dataSource]="photos" class="mat-elevation-z8 demo-table table">
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef>ID</th>
+      <td mat-cell *matCellDef="let element">{{element.id}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="title">
+      <th mat-header-cell *matHeaderCellDef>Title</th>
+      <td mat-cell *matCellDef="let element">{{element.title}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="edit">
+      <th mat-header-cell *matHeaderCellDef>Edit</th>
+      <td mat-cell *matCellDef="let element" (click)="editPhoto(element)">
+        <mat-icon>
+          edit
+        </mat-icon>
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="delete">
+      <th mat-header-cell *matHeaderCellDef>Delete</th>
+      <td mat-cell *matCellDef="let element" (click)="deletePhoto(element)">
+        <mat-icon>
+          delete
+        </mat-icon>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+  <button mat-raised-button (click)="addNewPhoto()" class="add-button">
+    Add Photo
+  </button>
+</div>
